@@ -11,6 +11,11 @@ const connector = new builder.ChatConnector({
     appId : "6120df0b-eec8-4922-a4ee-6b294df7c0b6",
     appPassword :"vi2mabAFh4ODzFQDrwSZGbg"
 });
+
+server.get('/hello', (req, res) => {
+    res.send('hello users');
+});
+
 server.post('/api/messages', connector.listen());
 
 const bot = new builder.UniversalBot(connector, (session) => {
